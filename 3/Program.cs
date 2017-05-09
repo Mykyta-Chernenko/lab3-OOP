@@ -185,7 +185,7 @@ namespace _3
         }
         public override float Perimeter()
         {
-            return base.Perimeter() 
+            return base.Perimeter();
         }
     }
 }
