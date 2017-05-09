@@ -53,6 +53,13 @@ namespace _3
                 y.PlusWidth(x);
             }
         }
+        public void MoveTo(float x, float y)
+        {
+            foreach( var k in list)
+            {
+                k.MoveTo(x, y);
+            }
+        }
         public void Scale (float size)
         {
             foreach (var x in list)
@@ -83,7 +90,7 @@ namespace _3
             {
                 if (x is FilledCircle) {
                     var tmp = (FilledCircle)x;
-                    Form1.pictureBox.Image = tmp.Draw(Form1.pictureBox, new SolidBrush(Color.FromArgb(255, 255, 0, 0)), Form1.bmp, Form1.g);
+                    Form1.pictureBox.Image = tmp.Draw(Form1.pictureBox, Form1.bmp, Form1.g);
                 }                    
                 else
                     Form1.pictureBox.Image = x.Draw(Form1.pictureBox, new Pen(Color.Red), Form1.bmp, Form1.g);

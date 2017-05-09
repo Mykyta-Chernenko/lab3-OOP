@@ -95,15 +95,17 @@ namespace _3
         }
         public override Bitmap Draw(PictureBox box, Pen pen, Bitmap btm, Graphics g)
         {
-            g.DrawEllipse(pen, X, Y, R * 2, R * 2);
+            g.DrawEllipse(pen, X - R, Y - R, R * 2, R*2);
             return btm;
         }
 
     }
     public class FilledCircle : Figure
     {
-        public FilledCircle(float x, float y, float r) : base(x, y, r)
+        public Color Col { get;set;}
+        public FilledCircle(float x, float y, float r, Color c) : base(x, y, r)
         {
+            Col = c;
         }
 
         public override Bitmap Draw(PictureBox box, Pen pen, Bitmap btm, Graphics g)
@@ -111,10 +113,14 @@ namespace _3
             throw new NotImplementedException();
         }
 
-        public Bitmap Draw(PictureBox box, SolidBrush solidBrush, Bitmap btm, Graphics g)
+        public Bitmap Draw(PictureBox box, Bitmap btm, Graphics g)
         {
-            g.FillEllipse(solidBrush, X, Y, R * 2, R * 2);
+            g.FillEllipse(new SolidBrush(Col), X - R, Y - R, R * 2, R * 2);
             return btm;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + $"Цвет {Col}";
         }
     }
     public class Elipse : Figure
@@ -127,12 +133,17 @@ namespace _3
         public override Bitmap Draw(PictureBox box, Pen pen, Bitmap btm, Graphics g)
         {
 
-            g.DrawEllipse(pen, X, Y, R * 2, R2 * 2);
+            g.DrawEllipse(pen, X - R, Y - R2, R * 2, R2 * 2);
             return btm;
+        }
+        public override void Scale(float size)
+        {
+            base.Scale(size);
+            R2 *= size;
         }
         public override float Perimeter()
         {
-            return 4 * (((float)Math.PI * R * R2 + (R - R2)*(R-R2)) / R + R2);
+            return 4 * (((float)Math.PI * R * R2 + (R - R2)*(R-R2)) / (R + R2));
         }
         public override float Square()
         {
@@ -151,13 +162,22 @@ namespace _3
         {
             H = h;
         }
+        public override void Scale(float size)
+        {
+            base.Scale(size);
+            H *= size;
+        }
         public override float Perimeter()
         {
             return (float)Math.PI*R*(R + (float)Math.Sqrt(R * R + H * H));
         }
         public override float Square()
         {
-            return 1 / 3 * (float)Math.PI * R * R * H;
+            return ( (float)1 / 3) * (float)Math.PI * R * R * H;
+        }
+        public override string ToString()
+        {
+            return base.ToString() + $" Высота: {H}";
         }
         public override Bitmap Draw(PictureBox box, Pen pen, Bitmap btm, Graphics g)
         {
@@ -175,6 +195,11 @@ namespace _3
         {
             Rh = rh;
         }
+        public override void Scale(float size)
+        {
+            base.Scale(size);
+            Rh *= size;
+        }
         public  override Bitmap Draw(PictureBox box, Pen pen, Bitmap btm , Graphics g)
         {
             g.DrawEllipse(pen, X - R, Y - (R / 2), R * 2, R);
@@ -185,7 +210,15 @@ namespace _3
         }
         public override float Perimeter()
         {
-            
+           return (float)Math.PI*(float) Math.Sqrt(H * H + (R - Rh) * (R - Rh))*(R + Rh) + (float)Math.PI*R*R + (float)Math.PI*Rh*Rh;
+        }
+        public override float Square()
+        {
+            return (float)1 / 3 * (float)Math.PI * H * (Rh * Rh + Rh * R + R * R);
+        }
+        public override string ToString()
+        {
+            return base.ToString() + $" Радиус малый: {Rh}";
         }
     }
 }
