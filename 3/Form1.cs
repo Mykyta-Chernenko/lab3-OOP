@@ -521,21 +521,24 @@ namespace _3
         {
             if (!Check(new string[] { textBox6.Text }))
                 MessageBox.Show("Ввод неправильный");
-            images.PlusWidth(float.Parse(textBox6.Text));
+            else
+                images.PlusWidth(float.Parse(textBox6.Text));
         }
 
         private void button23_Click(object sender, EventArgs e)
         {
             if (!Check(new string[] { textBox7.Text }))
                 MessageBox.Show("Ввод неправильный");
-            images.PlusHeight(float.Parse(textBox7.Text));
+            else
+                images.PlusHeight(float.Parse(textBox7.Text));
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
             if (!Check(new string[] { textBox8.Text, textBox9.Text }))
                 MessageBox.Show("Ввод неправильный");
-            images.MoveTo(float.Parse(textBox8.Text), float.Parse(textBox9.Text));
+            else
+                images.MoveTo(float.Parse(textBox8.Text), float.Parse(textBox9.Text));
         }
 
         private void button15_Click(object sender, EventArgs e)
