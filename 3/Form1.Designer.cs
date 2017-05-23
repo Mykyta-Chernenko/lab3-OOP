@@ -131,6 +131,7 @@
             this.button13 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.button14 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -1026,6 +1027,7 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button14);
             this.tabPage7.Controls.Add(this.label11);
             this.tabPage7.Controls.Add(this.textBox9);
             this.tabPage7.Controls.Add(this.textBox8);
@@ -1177,6 +1179,16 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(295, 184);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(142, 68);
+            this.button14.TabIndex = 109;
+            this.button14.Text = "Получить площадь с пересечением";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -1312,6 +1324,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button15;
+        private System.Windows.Forms.Button button14;
     }
 }
 

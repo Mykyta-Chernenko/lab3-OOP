@@ -56,6 +56,8 @@ namespace _3
         public virtual void Scale(float size)
         {
             R *= size;
+            X *= size;
+            Y *= size;
         }
         public virtual float Square()
         {
@@ -154,6 +156,19 @@ namespace _3
             return $"Тип фигуры: {this.GetType()} ,Координаты: {X}, {Y}, Радиус ширины: {R}, Радиус высоты: {R2}";
         }
 
+    }
+    public class FilledElipse : Elipse
+    {
+        public Color Col { get; set; }
+        public FilledElipse(float x, float y, float r, float r2, Color c) : base(x, y, r,r2)
+        {
+            Col = c;
+        }
+        public Bitmap Draw(PictureBox box, Bitmap btm, Graphics g)
+        {
+            g.FillEllipse(new SolidBrush(Col), X - R, Y - R2, R * 2, R2 * 2);
+            return btm;
+        }
     }
     public class Cone : Figure
     {

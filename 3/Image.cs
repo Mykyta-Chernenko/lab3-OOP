@@ -94,8 +94,66 @@ namespace _3
                 }                    
                 else
                     Form1.pictureBox.Image = x.Draw(Form1.pictureBox, new Pen(Color.Red), Form1.bmp, Form1.g);
+                
             }
         }
 
+        internal float IntersectedSquare()
+        {
+            List<Figure> temp = new List<Figure>();
+            foreach(var fig in list)
+            {
+                if(fig is Circle)
+                {
+                    FilledCircle t = new FilledCircle(fig.X, fig.Y, fig.R, Color.Black);
+                    temp.Add(t);
+                }
+                else if(fig is Elipse)
+                {
+                    Elipse figel = (Elipse)fig;
+                    FilledElipse t = new FilledElipse(figel.X, figel.Y, figel.R, figel.R2,Color.Black);
+                    temp.Add(t);
+                }
+                else if(fig is FilledCircle)
+                {
+                    FilledCircle filled = (FilledCircle)fig;
+                    FilledCircle t = new FilledCircle(filled.X, filled.Y, filled.R, Color.Black);
+                    temp.Add(t);
+                }
+                else
+                {
+                    temp.Add(fig);
+                }
+
+            }
+            Form1.g.Clear(Form1.pictureBox.BackColor);
+            foreach (var x in temp)
+            {
+                if (x is FilledCircle)
+                {
+                    var tmp = (FilledCircle)x;
+                    Form1.pictureBox.Image = tmp.Draw(Form1.pictureBox, Form1.bmp, Form1.g);
+                }
+                else if(x is FilledElipse)
+                {
+                    var tmp = (FilledElipse)x;
+                    Form1.pictureBox.Image = tmp.Draw(Form1.pictureBox, Form1.bmp, Form1.g);
+                }
+                else
+                    Form1.pictureBox.Image = x.Draw(Form1.pictureBox, new Pen(Color.Red), Form1.bmp, Form1.g);
+            }
+            float square = 0;
+            for (int x = 0; x < Form1.pictureBox.Image.Width; x++)
+            {
+                for (int y = 0; y < Form1.pictureBox.Image.Height; y++)
+                {
+                    var pix = ((Bitmap)Form1.pictureBox.Image).GetPixel(x, y);
+                    if (pix.R == 0 || pix.G == 0 || pix.B == 0) square++;
+                }
+            }
+            Form1.g.Clear(Form1.pictureBox.BackColor);
+            this.Draw();
+            return square;
+        }
     }
 }

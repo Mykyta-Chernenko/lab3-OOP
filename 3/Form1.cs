@@ -26,7 +26,9 @@ namespace _3
             images = new Image();
             pictureBox = pictureBox1;
             color = new ColorDialog();
+            
         }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -572,6 +574,11 @@ namespace _3
             g.Clear(pictureBox1.BackColor);
             images.Scale(float.Parse(listBox6.Text)/100);
             images.Draw();
+        }
+
+        private void button14_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Общая площадь с учетом пересечения: " + images.IntersectedSquare());
         }
     }
 }
