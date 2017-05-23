@@ -7,13 +7,11 @@ using System.Threading.Tasks;
 
 namespace _3
 {
-   public class Image
+    [Serializable]
+    public class Image
     {
-        public List<Figure> list;
-        public Image()
-        {
-            list = new List<Figure>();
-        }
+        
+        public FiguresList list;
         public void Add(Figure fg)
         {
             list.Add(fg);
@@ -86,19 +84,25 @@ namespace _3
         }
         public void Draw()
         {
-            foreach (var x in list)
+            if (this.IsNotEmpty())
             {
-                if (x is FilledCircle) {
-                    var tmp = (FilledCircle)x;
-                    Form1.pictureBox.Image = tmp.Draw(Form1.pictureBox, Form1.bmp, Form1.g);
-                }                    
-                else
-                    Form1.pictureBox.Image = x.Draw(Form1.pictureBox, new Pen(Color.Red), Form1.bmp, Form1.g);
-                
+                foreach (var x in list)
+                {
+                    if (x is FilledCircle)
+                    {
+                        var tmp = (FilledCircle)x;
+                        Form1.pictureBox.Image = tmp.Draw(Form1.pictureBox, Form1.bmp, Form1.g);
+                    }
+                    else
+                        Form1.pictureBox.Image = x.Draw(Form1.pictureBox, new Pen(Color.Red), Form1.bmp, Form1.g);
+
+                }
             }
+
+
         }
 
-        internal float IntersectedSquare()
+        public float IntersectedSquare()
         {
             List<Figure> temp = new List<Figure>();
             foreach(var fig in list)
@@ -154,6 +158,20 @@ namespace _3
             Form1.g.Clear(Form1.pictureBox.BackColor);
             this.Draw();
             return square;
+        }
+        public void DeleteLast()
+        {
+            if (list.Count > 0)
+                list.RemoveAt(list.Count - 1);
+        }
+        public bool IsNotEmpty()
+        {
+            return list.Count > 0;
+        }
+        public void AddList(Image im)
+        {
+            foreach (var x in im.list)
+                this.list.Add(x);
         }
     }
 }

@@ -116,6 +116,8 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.button31 = new System.Windows.Forms.Button();
+            this.button14 = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -130,8 +132,38 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button13 = new System.Windows.Forms.Button();
             this.button15 = new System.Windows.Forms.Button();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.button32 = new System.Windows.Forms.Button();
+            this.button33 = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.button40 = new System.Windows.Forms.Button();
+            this.button41 = new System.Windows.Forms.Button();
+            this.button42 = new System.Windows.Forms.Button();
+            this.listBox7 = new System.Windows.Forms.ListBox();
+            this.button48 = new System.Windows.Forms.Button();
+            this.button49 = new System.Windows.Forms.Button();
+            this.button50 = new System.Windows.Forms.Button();
+            this.button51 = new System.Windows.Forms.Button();
+            this.button52 = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
-            this.button14 = new System.Windows.Forms.Button();
+            this.button53 = new System.Windows.Forms.Button();
+            this.button54 = new System.Windows.Forms.Button();
+            this.button55 = new System.Windows.Forms.Button();
+            this.button56 = new System.Windows.Forms.Button();
+            this.button57 = new System.Windows.Forms.Button();
+            this.button58 = new System.Windows.Forms.Button();
+            this.button59 = new System.Windows.Forms.Button();
+            this.button60 = new System.Windows.Forms.Button();
+            this.button61 = new System.Windows.Forms.Button();
+            this.button62 = new System.Windows.Forms.Button();
+            this.button63 = new System.Windows.Forms.Button();
+            this.button64 = new System.Windows.Forms.Button();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -141,6 +173,7 @@
             this.tabPage5.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -148,7 +181,7 @@
             this.pictureBox1.AccessibleDescription = "static ";
             this.pictureBox1.Location = new System.Drawing.Point(12, 59);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(761, 602);
+            this.pictureBox1.Size = new System.Drawing.Size(653, 602);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -161,14 +194,16 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
-            this.tabControl1.Location = new System.Drawing.Point(779, 59);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Location = new System.Drawing.Point(671, 59);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(567, 325);
+            this.tabControl1.Size = new System.Drawing.Size(675, 358);
             this.tabControl1.TabIndex = 1;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button53);
             this.tabPage1.Controls.Add(this.button2);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.textBox2);
@@ -178,7 +213,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(559, 296);
+            this.tabPage1.Size = new System.Drawing.Size(667, 296);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Точка";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -237,6 +272,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.button54);
             this.tabPage2.Controls.Add(this.listBox1);
             this.tabPage2.Controls.Add(this.button11);
             this.tabPage2.Controls.Add(this.button7);
@@ -253,7 +289,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(559, 296);
+            this.tabPage2.Size = new System.Drawing.Size(667, 296);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Круг";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -381,6 +417,7 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.button55);
             this.tabPage3.Controls.Add(this.listBox2);
             this.tabPage3.Controls.Add(this.button12);
             this.tabPage3.Controls.Add(this.button16);
@@ -396,7 +433,7 @@
             this.tabPage3.Controls.Add(this.label10);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(559, 296);
+            this.tabPage3.Size = new System.Drawing.Size(667, 296);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Закрашенный круг";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -524,6 +561,7 @@
             // 
             // tabPage4
             // 
+            this.tabPage4.Controls.Add(this.button56);
             this.tabPage4.Controls.Add(this.listBox3);
             this.tabPage4.Controls.Add(this.textBox24);
             this.tabPage4.Controls.Add(this.label15);
@@ -541,7 +579,7 @@
             this.tabPage4.Controls.Add(this.label14);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(559, 296);
+            this.tabPage4.Size = new System.Drawing.Size(667, 296);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Элипс";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -686,6 +724,7 @@
             // 
             // tabPage5
             // 
+            this.tabPage5.Controls.Add(this.button57);
             this.tabPage5.Controls.Add(this.listBox4);
             this.tabPage5.Controls.Add(this.textBox39);
             this.tabPage5.Controls.Add(this.label24);
@@ -703,7 +742,7 @@
             this.tabPage5.Controls.Add(this.label19);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(559, 296);
+            this.tabPage5.Size = new System.Drawing.Size(667, 296);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Конус";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -847,6 +886,7 @@
             // 
             // tabPage6
             // 
+            this.tabPage6.Controls.Add(this.button58);
             this.tabPage6.Controls.Add(this.label9);
             this.tabPage6.Controls.Add(this.textBox41);
             this.tabPage6.Controls.Add(this.label6);
@@ -866,7 +906,7 @@
             this.tabPage6.Controls.Add(this.label23);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(559, 296);
+            this.tabPage6.Size = new System.Drawing.Size(667, 329);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Усеченный конус";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1027,6 +1067,10 @@
             // 
             // tabPage7
             // 
+            this.tabPage7.Controls.Add(this.button63);
+            this.tabPage7.Controls.Add(this.button64);
+            this.tabPage7.Controls.Add(this.button59);
+            this.tabPage7.Controls.Add(this.button31);
             this.tabPage7.Controls.Add(this.button14);
             this.tabPage7.Controls.Add(this.label11);
             this.tabPage7.Controls.Add(this.textBox9);
@@ -1044,19 +1088,40 @@
             this.tabPage7.Controls.Add(this.button15);
             this.tabPage7.Location = new System.Drawing.Point(4, 25);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(559, 296);
+            this.tabPage7.Size = new System.Drawing.Size(667, 329);
             this.tabPage7.TabIndex = 6;
-            this.tabPage7.Text = "Список фигур";
+            this.tabPage7.Text = "Список фигур1";
             this.tabPage7.UseVisualStyleBackColor = true;
+            this.tabPage7.Click += new System.EventHandler(this.tabPage7_Click);
+            // 
+            // button31
+            // 
+            this.button31.Location = new System.Drawing.Point(443, 193);
+            this.button31.Name = "button31";
+            this.button31.Size = new System.Drawing.Size(110, 64);
+            this.button31.TabIndex = 110;
+            this.button31.Text = "Удаление последней фигуры";
+            this.button31.UseVisualStyleBackColor = true;
+            this.button31.Click += new System.EventHandler(this.button31_Click);
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(295, 184);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(142, 68);
+            this.button14.TabIndex = 109;
+            this.button14.Text = "Получить площадь с пересечением";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click_1);
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Location = new System.Drawing.Point(175, 13);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(183, 17);
+            this.label11.Size = new System.Drawing.Size(195, 17);
             this.label11.TabIndex = 108;
-            this.label11.Text = "Применить для коллекции";
+            this.label11.Text = "Применить для коллекции 1";
             // 
             // textBox9
             // 
@@ -1179,15 +1244,307 @@
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
-            // button14
+            // tabPage8
             // 
-            this.button14.Location = new System.Drawing.Point(295, 184);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(142, 68);
-            this.button14.TabIndex = 109;
-            this.button14.Text = "Получить площадь с пересечением";
-            this.button14.UseVisualStyleBackColor = true;
-            this.button14.Click += new System.EventHandler(this.button14_Click_1);
+            this.tabPage8.Controls.Add(this.button62);
+            this.tabPage8.Controls.Add(this.button61);
+            this.tabPage8.Controls.Add(this.button60);
+            this.tabPage8.Controls.Add(this.button32);
+            this.tabPage8.Controls.Add(this.button33);
+            this.tabPage8.Controls.Add(this.label16);
+            this.tabPage8.Controls.Add(this.textBox10);
+            this.tabPage8.Controls.Add(this.textBox11);
+            this.tabPage8.Controls.Add(this.textBox12);
+            this.tabPage8.Controls.Add(this.textBox13);
+            this.tabPage8.Controls.Add(this.button40);
+            this.tabPage8.Controls.Add(this.button41);
+            this.tabPage8.Controls.Add(this.button42);
+            this.tabPage8.Controls.Add(this.listBox7);
+            this.tabPage8.Controls.Add(this.button48);
+            this.tabPage8.Controls.Add(this.button49);
+            this.tabPage8.Controls.Add(this.button50);
+            this.tabPage8.Controls.Add(this.button51);
+            this.tabPage8.Controls.Add(this.button52);
+            this.tabPage8.Location = new System.Drawing.Point(4, 25);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(667, 329);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Список фигур 2";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // button32
+            // 
+            this.button32.Location = new System.Drawing.Point(487, 206);
+            this.button32.Name = "button32";
+            this.button32.Size = new System.Drawing.Size(110, 64);
+            this.button32.TabIndex = 126;
+            this.button32.Text = "Удаление последней фигуры";
+            this.button32.UseVisualStyleBackColor = true;
+            this.button32.Click += new System.EventHandler(this.button32_Click);
+            // 
+            // button33
+            // 
+            this.button33.Location = new System.Drawing.Point(339, 197);
+            this.button33.Name = "button33";
+            this.button33.Size = new System.Drawing.Size(142, 68);
+            this.button33.TabIndex = 125;
+            this.button33.Text = "Получить площадь с пересечением";
+            this.button33.UseVisualStyleBackColor = true;
+            this.button33.Click += new System.EventHandler(this.button33_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(219, 26);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(195, 17);
+            this.label16.TabIndex = 124;
+            this.label16.Text = "Применить для коллекции 2";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(551, 89);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(47, 22);
+            this.textBox10.TabIndex = 114;
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(515, 89);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(30, 22);
+            this.textBox11.TabIndex = 113;
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(353, 89);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(49, 22);
+            this.textBox12.TabIndex = 112;
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(180, 89);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(57, 22);
+            this.textBox13.TabIndex = 111;
+            // 
+            // button40
+            // 
+            this.button40.Location = new System.Drawing.Point(408, 74);
+            this.button40.Name = "button40";
+            this.button40.Size = new System.Drawing.Size(101, 52);
+            this.button40.TabIndex = 123;
+            this.button40.Text = "переместить в точку";
+            this.button40.UseVisualStyleBackColor = true;
+            this.button40.Click += new System.EventHandler(this.button40_Click);
+            // 
+            // button41
+            // 
+            this.button41.Location = new System.Drawing.Point(243, 74);
+            this.button41.Name = "button41";
+            this.button41.Size = new System.Drawing.Size(101, 52);
+            this.button41.TabIndex = 122;
+            this.button41.Text = "переместить по y";
+            this.button41.UseVisualStyleBackColor = true;
+            this.button41.Click += new System.EventHandler(this.button41_Click);
+            // 
+            // button42
+            // 
+            this.button42.Location = new System.Drawing.Point(68, 74);
+            this.button42.Name = "button42";
+            this.button42.Size = new System.Drawing.Size(101, 52);
+            this.button42.TabIndex = 121;
+            this.button42.Text = "переместить по x";
+            this.button42.UseVisualStyleBackColor = true;
+            this.button42.Click += new System.EventHandler(this.button42_Click);
+            // 
+            // listBox7
+            // 
+            this.listBox7.FormattingEnabled = true;
+            this.listBox7.ItemHeight = 16;
+            this.listBox7.Items.AddRange(new object[] {
+            "50",
+            "100",
+            "200"});
+            this.listBox7.Location = new System.Drawing.Point(213, 197);
+            this.listBox7.Name = "listBox7";
+            this.listBox7.Size = new System.Drawing.Size(120, 68);
+            this.listBox7.TabIndex = 120;
+            // 
+            // button48
+            // 
+            this.button48.Location = new System.Drawing.Point(77, 197);
+            this.button48.Name = "button48";
+            this.button48.Size = new System.Drawing.Size(116, 52);
+            this.button48.TabIndex = 119;
+            this.button48.Text = "Увеличить в:";
+            this.button48.UseVisualStyleBackColor = true;
+            this.button48.Click += new System.EventHandler(this.button48_Click);
+            // 
+            // button49
+            // 
+            this.button49.Location = new System.Drawing.Point(487, 132);
+            this.button49.Name = "button49";
+            this.button49.Size = new System.Drawing.Size(82, 52);
+            this.button49.TabIndex = 118;
+            this.button49.Text = "получить периметр ";
+            this.button49.UseVisualStyleBackColor = true;
+            this.button49.Click += new System.EventHandler(this.button49_Click);
+            // 
+            // button50
+            // 
+            this.button50.Location = new System.Drawing.Point(399, 132);
+            this.button50.Name = "button50";
+            this.button50.Size = new System.Drawing.Size(82, 52);
+            this.button50.TabIndex = 117;
+            this.button50.Text = "Получить площадь";
+            this.button50.UseVisualStyleBackColor = true;
+            this.button50.Click += new System.EventHandler(this.button50_Click);
+            // 
+            // button51
+            // 
+            this.button51.Location = new System.Drawing.Point(311, 132);
+            this.button51.Name = "button51";
+            this.button51.Size = new System.Drawing.Size(82, 52);
+            this.button51.TabIndex = 116;
+            this.button51.Text = "вывести информацию";
+            this.button51.UseVisualStyleBackColor = true;
+            this.button51.Click += new System.EventHandler(this.button51_Click);
+            // 
+            // button52
+            // 
+            this.button52.Location = new System.Drawing.Point(77, 132);
+            this.button52.Name = "button52";
+            this.button52.Size = new System.Drawing.Size(101, 52);
+            this.button52.TabIndex = 115;
+            this.button52.Text = "Нарисовать";
+            this.button52.UseVisualStyleBackColor = true;
+            this.button52.Click += new System.EventHandler(this.button52_Click);
+            // 
+            // button53
+            // 
+            this.button53.Location = new System.Drawing.Point(257, 122);
+            this.button53.Name = "button53";
+            this.button53.Size = new System.Drawing.Size(84, 72);
+            this.button53.TabIndex = 6;
+            this.button53.Text = "Добавить во второй список";
+            this.button53.UseVisualStyleBackColor = true;
+            this.button53.Click += new System.EventHandler(this.button53_Click);
+            // 
+            // button54
+            // 
+            this.button54.Location = new System.Drawing.Point(510, 105);
+            this.button54.Name = "button54";
+            this.button54.Size = new System.Drawing.Size(84, 72);
+            this.button54.TabIndex = 31;
+            this.button54.Text = "Добавить во второй список";
+            this.button54.UseVisualStyleBackColor = true;
+            this.button54.Click += new System.EventHandler(this.button54_Click);
+            // 
+            // button55
+            // 
+            this.button55.Location = new System.Drawing.Point(522, 107);
+            this.button55.Name = "button55";
+            this.button55.Size = new System.Drawing.Size(84, 72);
+            this.button55.TabIndex = 52;
+            this.button55.Text = "Добавить во второй список";
+            this.button55.UseVisualStyleBackColor = true;
+            this.button55.Click += new System.EventHandler(this.button55_Click);
+            // 
+            // button56
+            // 
+            this.button56.Location = new System.Drawing.Point(522, 107);
+            this.button56.Name = "button56";
+            this.button56.Size = new System.Drawing.Size(84, 72);
+            this.button56.TabIndex = 76;
+            this.button56.Text = "Добавить во второй список";
+            this.button56.UseVisualStyleBackColor = true;
+            this.button56.Click += new System.EventHandler(this.button56_Click);
+            // 
+            // button57
+            // 
+            this.button57.Location = new System.Drawing.Point(531, 107);
+            this.button57.Name = "button57";
+            this.button57.Size = new System.Drawing.Size(84, 72);
+            this.button57.TabIndex = 76;
+            this.button57.Text = "Добавить во второй список";
+            this.button57.UseVisualStyleBackColor = true;
+            this.button57.Click += new System.EventHandler(this.button57_Click);
+            // 
+            // button58
+            // 
+            this.button58.Location = new System.Drawing.Point(531, 107);
+            this.button58.Name = "button58";
+            this.button58.Size = new System.Drawing.Size(84, 72);
+            this.button58.TabIndex = 98;
+            this.button58.Text = "Добавить во второй список";
+            this.button58.UseVisualStyleBackColor = true;
+            this.button58.Click += new System.EventHandler(this.button58_Click);
+            // 
+            // button59
+            // 
+            this.button59.Location = new System.Drawing.Point(57, 258);
+            this.button59.Name = "button59";
+            this.button59.Size = new System.Drawing.Size(136, 51);
+            this.button59.TabIndex = 111;
+            this.button59.Text = "Объеденить с 2 списком";
+            this.button59.UseVisualStyleBackColor = true;
+            this.button59.Click += new System.EventHandler(this.button59_Click);
+            // 
+            // button60
+            // 
+            this.button60.Location = new System.Drawing.Point(86, 271);
+            this.button60.Name = "button60";
+            this.button60.Size = new System.Drawing.Size(136, 51);
+            this.button60.TabIndex = 127;
+            this.button60.Text = "Объеденить с 1 списком";
+            this.button60.UseVisualStyleBackColor = true;
+            this.button60.Click += new System.EventHandler(this.button60_Click);
+            // 
+            // button61
+            // 
+            this.button61.Location = new System.Drawing.Point(257, 290);
+            this.button61.Name = "button61";
+            this.button61.Size = new System.Drawing.Size(96, 32);
+            this.button61.TabIndex = 128;
+            this.button61.Text = "сохранить";
+            this.button61.UseVisualStyleBackColor = true;
+            this.button61.Click += new System.EventHandler(this.button61_Click);
+            // 
+            // button62
+            // 
+            this.button62.Location = new System.Drawing.Point(374, 290);
+            this.button62.Name = "button62";
+            this.button62.Size = new System.Drawing.Size(96, 32);
+            this.button62.TabIndex = 129;
+            this.button62.Text = "открыть";
+            this.button62.UseVisualStyleBackColor = true;
+            this.button62.Click += new System.EventHandler(this.button62_Click);
+            // 
+            // button63
+            // 
+            this.button63.Location = new System.Drawing.Point(337, 267);
+            this.button63.Name = "button63";
+            this.button63.Size = new System.Drawing.Size(96, 32);
+            this.button63.TabIndex = 131;
+            this.button63.Text = "открыть";
+            this.button63.UseVisualStyleBackColor = true;
+            this.button63.Click += new System.EventHandler(this.button63_Click);
+            // 
+            // button64
+            // 
+            this.button64.Location = new System.Drawing.Point(220, 267);
+            this.button64.Name = "button64";
+            this.button64.Size = new System.Drawing.Size(96, 32);
+            this.button64.TabIndex = 130;
+            this.button64.Text = "сохранить";
+            this.button64.UseVisualStyleBackColor = true;
+            this.button64.Click += new System.EventHandler(this.button64_Click);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // Form1
             // 
@@ -1215,6 +1572,8 @@
             this.tabPage6.PerformLayout();
             this.tabPage7.ResumeLayout(false);
             this.tabPage7.PerformLayout();
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1325,6 +1684,38 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button15;
         private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button button31;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Button button32;
+        private System.Windows.Forms.Button button33;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox textBox11;
+        private System.Windows.Forms.TextBox textBox12;
+        private System.Windows.Forms.TextBox textBox13;
+        private System.Windows.Forms.Button button40;
+        private System.Windows.Forms.Button button41;
+        private System.Windows.Forms.Button button42;
+        private System.Windows.Forms.ListBox listBox7;
+        private System.Windows.Forms.Button button48;
+        private System.Windows.Forms.Button button49;
+        private System.Windows.Forms.Button button50;
+        private System.Windows.Forms.Button button51;
+        private System.Windows.Forms.Button button52;
+        private System.Windows.Forms.Button button53;
+        private System.Windows.Forms.Button button54;
+        private System.Windows.Forms.Button button55;
+        private System.Windows.Forms.Button button56;
+        private System.Windows.Forms.Button button57;
+        private System.Windows.Forms.Button button58;
+        private System.Windows.Forms.Button button59;
+        private System.Windows.Forms.Button button60;
+        private System.Windows.Forms.Button button63;
+        private System.Windows.Forms.Button button64;
+        private System.Windows.Forms.Button button62;
+        private System.Windows.Forms.Button button61;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
 

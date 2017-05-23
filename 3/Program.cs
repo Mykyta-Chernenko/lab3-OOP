@@ -28,7 +28,7 @@ namespace _3
             Form1 Frm = new Form1();
         }
     }
-
+    [Serializable]
     public abstract class Figure
     {
         public virtual float X { get; set; }
@@ -75,6 +75,7 @@ namespace _3
         public abstract Bitmap Draw(PictureBox box, Pen pen, Bitmap btm, Graphics g);
         
     }
+    [Serializable]
     public class Point : Figure
     {
         public Point(float x, float y) : base(x, y, 0)
@@ -90,6 +91,7 @@ namespace _3
             return $"Тип фигуры: {this.GetType()} Координаты: {X}, {Y}";
         }
     }
+    [Serializable]
     public class Circle : Figure
     {
         public Circle(float x, float y, float r) : base(x, y, r)
@@ -102,6 +104,7 @@ namespace _3
         }
 
     }
+    [Serializable]
     public class FilledCircle : Figure
     {
         public Color Col { get;set;}
@@ -125,6 +128,7 @@ namespace _3
             return base.ToString() + $"Цвет {Col}";
         }
     }
+    [Serializable]
     public class Elipse : Figure
     {
         public float R2 { get; set; }
@@ -157,6 +161,7 @@ namespace _3
         }
 
     }
+    [Serializable]
     public class FilledElipse : Elipse
     {
         public Color Col { get; set; }
@@ -170,6 +175,7 @@ namespace _3
             return btm;
         }
     }
+    [Serializable]
     public class Cone : Figure
     {
         public float H { get;set;}
@@ -202,6 +208,7 @@ namespace _3
             return btm;
         }
     }
+    [Serializable]
     public class TruncatedCone : Cone
     {
         public float Rh {get;set;}

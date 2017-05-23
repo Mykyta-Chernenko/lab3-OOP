@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,6 +18,7 @@ namespace _3
         public static Bitmap bmp;
         public static Graphics g;
         public static Image images;
+        public static Image images2;
         public static PictureBox pictureBox;
         public static ColorDialog color;
 
@@ -24,6 +28,9 @@ namespace _3
             bmp = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             g = Graphics.FromImage(bmp);
             images = new Image();
+            images.list = new FiguresList();
+            images2 = new Image();
+            images2.list = new FiguresList();
             pictureBox = pictureBox1;
             color = new ColorDialog();
             
@@ -546,7 +553,8 @@ namespace _3
         private void button15_Click(object sender, EventArgs e)
         {
             g.Clear(pictureBox1.BackColor);
-            images.Draw();
+            pictureBox.Refresh();
+            if(images.IsNotEmpty())images.Draw();
         }
 
         private void button14_Click(object sender, EventArgs e)
@@ -566,7 +574,7 @@ namespace _3
 
         private void button9_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Общая площадь: " + images.Perimeter());
+            MessageBox.Show("Общий периметр: " + images.Perimeter());
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -580,5 +588,224 @@ namespace _3
         {
             MessageBox.Show("Общая площадь с учетом пересечения: " + images.IntersectedSquare());
         }
+
+        private void tabPage7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button31_Click(object sender, EventArgs e)
+        {
+            images.DeleteLast();
+        }
+
+        private void button42_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox13.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+                images2.PlusWidth(float.Parse(textBox13.Text));
+        }
+
+        private void button41_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox12.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+                images2.PlusHeight(float.Parse(textBox12.Text));
+        }
+
+        private void button40_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox11.Text, textBox10.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+                images2.MoveTo(float.Parse(textBox11.Text), float.Parse(textBox10.Text));
+        }
+
+        private void button52_Click(object sender, EventArgs e)
+        {
+            g.Clear(pictureBox1.BackColor);
+            pictureBox.Refresh();
+            if (images2.IsNotEmpty()) images2.Draw();
+        }
+
+        private void button51_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show(images2.ToString());
+        }
+
+        private void button50_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Общая площадь: " + images2.Square());
+        }
+
+        private void button49_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Общий периметр: " + images2.Perimeter());
+        }
+
+        private void button48_Click(object sender, EventArgs e)
+        {
+            g.Clear(pictureBox1.BackColor);
+            images2.Scale(float.Parse(listBox7.Text) / 100);
+            images2.Draw();
+        }
+
+        private void button33_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Общая площадь с учетом пересечения: " + images2.IntersectedSquare());
+        }
+
+        private void button32_Click(object sender, EventArgs e)
+        {
+            images2.DeleteLast();
+        }
+
+        private void button58_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox36.Text, textBox37.Text, textBox38.Text, textBox40.Text, textBox41.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+            {
+                images2.Add(new TruncatedCone(int.Parse(textBox36.Text),
+                    int.Parse(textBox37.Text),
+                    int.Parse(textBox38.Text), int.Parse(textBox40.Text), int.Parse(textBox41.Text)));
+
+            }
+        }
+
+        private void button53_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox1.Text, textBox2.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+            {
+                images2.Add(new Point(int.Parse(textBox1.Text), int.Parse(textBox2.Text)));
+            }
+        }
+
+        private void button54_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox3.Text, textBox4.Text, textBox5.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+            {
+                images2.Add(new Circle(int.Parse(textBox3.Text), int.Parse(textBox4.Text), int.Parse(textBox5.Text)));
+            }
+        }
+
+        private void button55_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox14.Text, textBox15.Text, textBox16.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+            {
+                if (color.ShowDialog() == DialogResult.OK)
+                {
+                    images2.Add(new FilledCircle(int.Parse(textBox14.Text), int.Parse(textBox15.Text), int.Parse(textBox16.Text), color.Color));
+                }
+            }
+        }
+
+        private void button56_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox21.Text, textBox22.Text, textBox23.Text, textBox23.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+            {
+                images2.Add(new Elipse(int.Parse(textBox21.Text),
+                    int.Parse(textBox22.Text),
+                    int.Parse(textBox23.Text), int.Parse(textBox24.Text)));
+
+            }
+        }
+
+        private void button57_Click(object sender, EventArgs e)
+        {
+            if (!Check(new string[] { textBox29.Text, textBox30.Text, textBox31.Text, textBox39.Text }))
+                MessageBox.Show("Ввод неправильный");
+            else
+            {
+                images2.Add(new Cone(int.Parse(textBox29.Text),
+                    int.Parse(textBox30.Text),
+                    int.Parse(textBox31.Text), int.Parse(textBox39.Text)));
+
+            }
+        }
+
+        private void button59_Click(object sender, EventArgs e)
+        {
+            images.AddList(images2);
+        }
+
+        private void button60_Click(object sender, EventArgs e)
+        {
+            images2.AddList(images);
+        }
+
+        private void button63_Click(object sender, EventArgs e)
+        {
+            Open_Click(ref images);
+        }
+
+        private void button64_Click(object sender, EventArgs e)
+        {
+            Save_click(images);
+        }
+        private void Save_click(Image im)
+        {
+            if (saveFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+            try
+            {
+                string filename = saveFileDialog1.FileName;
+                BinaryFormatter formatter = new BinaryFormatter();
+                using (FileStream fs = new FileStream(filename+".dat", FileMode.OpenOrCreate))
+                {
+                    formatter.Serialize(fs, im);
+
+                    Console.WriteLine("Объект сериализован");
+                }
+                //string imagesString = JsonConvert.SerializeObject(im);
+                //File.WriteAllText(filename + ".txt", imagesString);
+                MessageBox.Show(@"Image has been successfully saved");
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show(@"Image hasn't been saved"+ e.ToString());
+            }
+        }
+        private void Open_Click(ref Image im)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.Cancel)
+                return;
+
+            try
+            {
+                BinaryFormatter formatter = new BinaryFormatter();
+                string filename = openFileDialog1.FileName;
+                using (FileStream fs = new FileStream(filename, FileMode.OpenOrCreate))
+                {
+                    im = (Image)formatter.Deserialize(fs);
+                }
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(@"File can't be opened" + e.ToString());
+            }
+        }
+
+        private void button61_Click(object sender, EventArgs e)
+        {
+            Save_click(images2);
+        }
+
+        private void button62_Click(object sender, EventArgs e)
+        {
+            Open_Click(ref images2);
+        }
     }
+
 }
+
